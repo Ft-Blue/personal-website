@@ -5,7 +5,8 @@
     "eslint:recommended",
     "plugin:import/recommended",
     "plugin:prettier/recommended",
-    "next"
+    "next",
+    "plugin:tailwindcss/recommended"
   ],
   "rules": {
     "curly": ["error", "all"],
