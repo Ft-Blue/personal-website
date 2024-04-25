@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "naumovs.color-highlight",
+        "dbaeumer.vscode-eslint",
+        "sleistner.vscode-fileutils",
+        "github.copilot",
+        "eamodio.gitlens",
+        "pkief.material-icon-theme",
+        "yoavbls.pretty-ts-errors",
+        "simonsiefke.svg-preview",
+        "firsttris.vscode-jest-runner"
+    ]
+}
