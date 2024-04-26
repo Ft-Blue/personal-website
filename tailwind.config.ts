@@ -8,12 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
+      },
       colors: {
-        "dark-color": "#2F4858",
-        "light-color": "#F1F1E6",
+        "pickled-bluewood": "#2F4858",
+        merino: "#F1F1E6",
+        "greeny-blue": "#4BBC8E",
       },
     },
   },
   plugins: [],
 };
+
 export default config;

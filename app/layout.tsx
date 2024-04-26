@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import "./globals.css";
+import { Header } from "./components/Header";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -19,8 +20,9 @@ type RootLayoutProps = Readonly<{
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en">
-      <body className="bg-slate-900 px-16">
+    <html lang="en" className="font-sans">
+      <body className="bg-pickled-bluewood px-64">
+        <Header />
         <main>{children}</main>
       </body>
     </html>
