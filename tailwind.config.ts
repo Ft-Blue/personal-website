@@ -13,6 +13,7 @@ const config: Config = {
       },
       colors: {
         "pickled-bluewood": "#2F4858",
+        "blue-bayoux": "#416379",
         merino: "#F1F1E6",
         "greeny-blue": "#4BBC8E",
       },
