@@ -9,7 +9,7 @@ import type { Metadata, Viewport } from "next";
 // Prevent fontawesome from adding its CSS since we manually imported it above:
 config.autoAddCss = false;
 
-import { Header } from "./components/Header";
+import { Header } from "./components/Header/Header";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,8 +28,8 @@ type RootLayoutProps = Readonly<{
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className="font-sans">
-      <body className="bg-pickled-bluewood px-16">
+    <html lang="en" className="font-sans text-merino">
+      <body className="bg-pickled-bluewood px-8 md:px-16">
         <Header />
         <main>{children}</main>
       </body>
