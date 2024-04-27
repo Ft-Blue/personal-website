@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="text-merino">
+    <header>
       <div className="flex justify-between py-4">
         <div className="flex content-center">
           <Image

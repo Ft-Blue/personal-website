@@ -13,7 +13,7 @@ export const StyledLink: FC<{
     key={key}
     href={menuItem.href}
     onClick={onClick}
-    className={`flex flex-col justify-center rounded-lg px-4 py-2 hover:text-greeny-blue ${additionalClasses}`}
+    className={`flex flex-col justify-center rounded-lg px-4 py-2 hover:text-secondary-700 ${additionalClasses}`}
   >
     {menuItem.text}
   </Link>

@@ -53,7 +53,7 @@ const MobileMenuItems = ({
         y: isOpen ? "0" : "50%",
       }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-x-0 bottom-0 top-24 flex flex-col gap-6 border-t-2 border-solid border-merino bg-pickled-bluewood pt-6 text-center"
+      className="fixed inset-x-0 bottom-0 top-24 flex flex-col gap-6 border-t-2 border-solid border-primary-300 bg-background-800 pt-6 text-center"
     >
       {items.map((item) => (
         <StyledLink key={item.href} menuItem={item} onClick={onClose} />
