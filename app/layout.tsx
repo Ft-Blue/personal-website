@@ -28,8 +28,8 @@ type RootLayoutProps = Readonly<{
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className="font-sans text-primary-300">
-      <body className="bg-background-900 px-8 md:px-16">
+    <html lang="en" className="font-sans text-xl text-primary-300">
+      <body className="relative bg-background-900">
         <Header />
         <main>{children}</main>
       </body>
