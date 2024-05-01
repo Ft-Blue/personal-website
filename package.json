@@ -12,7 +12,9 @@
     "check-code": "npm run lint && npm run check-types",
     "test": "jest --silent --watchAll --coverage=false",
     "test:coverage": "jest --silent --coverage",
-    "test:ci": "jest --silent --ci --maxWorkers=1 --passWithNoTests"
+    "test:ci": "jest --silent --ci --maxWorkers=1 --passWithNoTests",
+    "_contentful:get-types": "cf-content-types-generator -s $CONTENTFUL_SPACE_ID -t $CONTENTFUL_CMA_TOKEN -o ./app/types/contentful --v10",
+    "contentful:get-types": "dotenv -e .env.local -- npm run _contentful:get-types"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
@@ -20,6 +22,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "contentful": "^10.9.1",
     "framer-motion": "^11.1.7",
     "next": "14.2.1",
     "react": "^18",
@@ -33,6 +36,8 @@
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
+    "cf-content-types-generator": "^2.15.1",
+    "dotenv-cli": "^7.4.1",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.1",
     "eslint-config-prettier": "^9.1.0",
