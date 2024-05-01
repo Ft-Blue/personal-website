@@ -1,76 +1,68 @@
+import {
+  documentToReactComponents,
+  Options,
+} from "@contentful/rich-text-react-renderer";
+import { BLOCKS, Document } from "@contentful/rich-text-types";
+import { ReactNode } from "react";
+
+import { getEntriesByType } from "@/app/services/contentful";
+import { TypeProfessional__experienceSkeleton } from "@/app/types/contentful";
+
 import { Experience } from "./types";
 
-export const fetchExperiences = (): Experience[] => {
-  return [
-    {
-      title: "Tech Lead",
-      company: "Funecap",
-      location: "Paris, France",
-      startDate: "October 2023",
-      endDate: "Present",
-      technologies: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Symfony",
-        "MariaDB",
-        "AWS",
-        "Docker",
-        "Gitlab",
-      ],
-      description: FunecapDescription,
-    },
-    {
-      title: "Tech Lead",
-      company: "Bpifrance",
-      location: "Paris, France",
-      startDate: "August 2022",
-      endDate: "October 2023",
-      technologies: [
-        "Angular",
-        "TypeScript",
-        "Spring Boot",
-        "Camunda",
-        "PostgreSQL",
-        "Python",
-        "Docker",
-        "Gitlab",
-      ],
-      description: BpifranceDescription,
-    },
-  ];
+export const fetchExperiences = async (): Promise<Experience[]> => {
+  const experiencesEntries =
+    await getEntriesByType<TypeProfessional__experienceSkeleton>(
+      "professional-experience",
+    );
+
+  // sort experiences by start date in descending order
+  experiencesEntries.items.sort((a, b) => {
+    const aStartDate = new Date(a.fields.startDate);
+    const bStartDate = new Date(b.fields.startDate);
+
+    return bStartDate.getTime() - aStartDate.getTime();
+  });
+
+  return experiencesEntries.items.map((item) => {
+    const fields = item.fields;
+
+    return {
+      title: fields.title,
+      company: fields.company,
+      location: fields.location,
+      startDate: formatDate(fields.startDate),
+      endDate:
+        undefined !== fields.endDate ? formatDate(fields.endDate) : "Present",
+      technologies: fields.technologies,
+      description: formatDescription(fields.description),
+    };
+  });
 };
 
-const FunecapDescription = (
-  <>
-    <p>Migrating the old company&apos;s website from Wordpress to Next.js</p>
-    <ol className="list-disc">
-      <li>Managing a team of 3 developers</li>
-      <li>Writing the technical specs of the developed features</li>
-      <li>Improving the legacy base while reusing old code</li>
-      <li>
-        Working with IT Operations to migrate to AWS and enhancing the Developer
-        Experience
-      </li>
-    </ol>
-  </>
-);
+const formatDate = (
+  date: `${number}-${number}-${number}T${number}:${number}:${number}Z`,
+): string => {
+  const [year, month] = date.split("T")[0].split("-");
 
-const BpifranceDescription = (
-  <>
-    <p>Developing an online loans platform for entrepreneurs.</p>
-    <ol className="list-disc">
-      <li>
-        Reducing the time necessary to create a new platform by a factor of 5
-      </li>
-      <li>
-        Developing new features to enhance the user experience and make the
-        process faster
-      </li>
-      <li>
-        Working the Customer Support to reduce the time necessary to close user
-        requests.
-      </li>
-    </ol>
-  </>
-);
+  // return month and year in the format MMMM YYYY
+  return new Date(`${year}-${month}`).toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+};
+
+const formatDescription = (description: Document): ReactNode => {
+  const options: Options = {
+    renderNode: {
+      [BLOCKS.UL_LIST]: (node, children) => {
+        return <ul className="list-disc">{children}</ul>;
+      },
+      [BLOCKS.LIST_ITEM]: (node, children) => {
+        return <li>{children}</li>;
+      },
+    },
+  };
+
+  return documentToReactComponents(description, options);
+};

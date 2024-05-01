@@ -1,4 +1,9 @@
-import { createClient, Entry, EntrySkeletonType } from "contentful";
+import {
+  createClient,
+  Entry,
+  EntryCollection,
+  EntrySkeletonType,
+} from "contentful";
 
 export const getEntryById = <T extends EntrySkeletonType>(
   entryId: string,
@@ -10,4 +15,18 @@ export const getEntryById = <T extends EntrySkeletonType>(
   });
 
   return contenfulClient.getEntry<T>(entryId);
+};
+
+export const getEntriesByType = <T extends EntrySkeletonType>(
+  contentType: T["contentTypeId"],
+): Promise<EntryCollection<T, undefined>> => {
+  const contenfulClient = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID ?? "",
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
+    host: "cdn.contentful.com",
+  });
+
+  return contenfulClient.getEntries<T>({
+    content_type: contentType,
+  });
 };
