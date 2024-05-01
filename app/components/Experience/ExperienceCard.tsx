@@ -20,7 +20,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
   technologies,
 }) => {
   return (
-    <div className="flex flex-col gap-4 py-2">
+    <div className="flex flex-col gap-4 border-l-2 border-primary-500 py-2 pl-6">
       <div className="flex flex-col gap-2">
         <h3 className="text-secondary-700">{title}</h3>
         <h4 className="text-primary-100">{company}</h4>

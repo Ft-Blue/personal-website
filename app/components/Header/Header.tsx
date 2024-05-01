@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="absolute inset-x-8 top-0 text-center text-sm md:inset-x-8">
+    <header className="sticky top-0 z-50 bg-background-900 px-8 text-center text-sm md:px-8">
       <div className="flex justify-between py-4">
         <div className="flex content-center">
           <Image
@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className="hidden content-center gap-4  md:flex">
+          <div className="hidden content-center gap-4 md:flex">
             {menuItems.map((item) => (
               <StyledLink key={item.href} menuItem={item} />
             ))}
@@ -33,8 +33,6 @@ export const Header: React.FC = () => {
           <MobileMenu menuItems={menuItems} />
         </div>
       </div>
-
-      <div className={`md:hidden`}></div>
     </header>
   );
 };
