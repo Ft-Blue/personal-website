@@ -6,6 +6,7 @@ const Home: React.FC = () => {
     <>
       <SummarySection />
       <ExperienceSection />
+      <div style={{ height: "75vh" }} />
     </>
   );
 };
