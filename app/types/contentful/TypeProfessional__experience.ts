@@ -7,11 +7,12 @@ import type {
 } from "contentful";
 
 export interface TypeProfessional__experienceFields {
+  internalTitle: EntryFieldTypes.Symbol;
   title: EntryFieldTypes.Symbol;
   company: EntryFieldTypes.Symbol;
   location: EntryFieldTypes.Symbol;
-  startTime: EntryFieldTypes.Date;
-  endDate: EntryFieldTypes.Date;
+  startDate: EntryFieldTypes.Date;
+  endDate?: EntryFieldTypes.Date;
   description: EntryFieldTypes.RichText;
   technologies: EntryFieldTypes.Array<EntryFieldTypes.Symbol>;
 }
