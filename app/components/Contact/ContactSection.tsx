@@ -1,0 +1,80 @@
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+
+import { LayoutGrid } from "@/app/layout/LayoutGrid";
+
+export const ContactSection: React.FC = () => {
+  return (
+    <section className="pb-20">
+      <LayoutGrid>
+        <h2
+          id="contact"
+          className="col-span-full mb-16 scroll-mt-36 text-4xl font-bold text-primary-100 md:text-center"
+        >
+          Get In Touch
+        </h2>
+      </LayoutGrid>
+
+      <LayoutGrid>
+        <ReachOut />
+        <SocialLinks />
+      </LayoutGrid>
+    </section>
+  );
+};
+
+const SocialLinks: React.FC = () => {
+  return (
+    <div className="col-span-full flex items-center justify-center gap-8 text-primary-300">
+      <Link
+        href="mailto:moad.fethallah@gmail.com"
+        className="text-4xl text-primary-100"
+      >
+        <FontAwesomeIcon icon={faEnvelope} />
+      </Link>
+      <Link
+        href="https://github.com/Ft-Blue"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-4xl text-primary-100"
+      >
+        <FontAwesomeIcon icon={faGithub} />
+      </Link>
+      <Link
+        href="https://www.linkedin.com/in/moad-fethallah/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-4xl text-primary-100"
+      >
+        <FontAwesomeIcon icon={faLinkedin} />
+      </Link>
+    </div>
+  );
+};
+
+const ReachOut: React.FC = () => {
+  return (
+    <>
+      <div className="col-span-full mb-8 text-primary-300 md:text-center">
+        <p>
+          I&apos;m not currently looking for new opportunities, but I&apos;m
+          always open to new connections.
+        </p>
+        <p>
+          If you have any questions or just want to say hi, feel free to send me
+          an email.
+        </p>
+      </div>
+      <div className="col-span-full mb-16 flex items-center justify-center text-primary-300">
+        <Link
+          href="mailto:moad.fethallah@gmail.com"
+          className="w-fit rounded-md border-2 border-secondary-700 px-8 py-4 text-secondary-700 transition-colors duration-300 ease-in-out hover:bg-secondary-700 hover:text-background-100"
+        >
+          Reach out !
+        </Link>
+      </div>
+    </>
+  );
+};

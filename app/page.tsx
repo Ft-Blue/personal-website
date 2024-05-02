@@ -1,3 +1,4 @@
+import { ContactSection } from "./components/Contact/ContactSection";
 import { ExperienceSection } from "./components/Experience/ExperienceSection";
 import { SummarySection } from "./components/Summary/SummarySection";
 
@@ -8,7 +9,7 @@ const Home: React.FC = () => {
     <>
       <SummarySection />
       <ExperienceSection />
-      <div style={{ height: "75vh" }} />
+      <ContactSection />
     </>
   );
 };

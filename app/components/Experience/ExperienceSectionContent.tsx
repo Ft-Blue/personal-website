@@ -16,7 +16,7 @@ export const ExperienceSectionContent: React.FC<{
       <LayoutGrid>
         <h2
           id="experience"
-          className="col-span-full mb-16 scroll-mt-36 text-4xl font-bold text-primary-100"
+          className="col-span-full mb-16 scroll-mt-36 text-4xl font-bold text-primary-100 md:text-center"
         >
           What I&apos;ve Been Up To
         </h2>
