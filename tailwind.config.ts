@@ -46,6 +46,9 @@ const config: Config = {
           900: "#358463",
         },
       },
+      gridTemplateRows: {
+        layout: "auto 1fr auto",
+      },
     },
   },
   plugins: [],
