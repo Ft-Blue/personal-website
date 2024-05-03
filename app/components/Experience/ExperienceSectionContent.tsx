@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 import { LayoutGrid } from "@/app/layout/LayoutGrid";
 
@@ -28,7 +29,13 @@ export const ExperienceSectionContent: React.FC<{
             {experiences.map((experience, idx) => (
               <button
                 key={`${experience.company} - ${experience.startDate}`}
-                className={`p-2 text-start hover:border-b-2 hover:border-secondary-700 hover:text-secondary-700 ${idx === shownExperienceIdx ? selectedButtonClasses : unselectedButtonClasses} transition-colors`}
+                className={twMerge(
+                  "p-2 text-start hover:border-b-2 hover:border-secondary-700 hover:text-secondary-700",
+                  idx === shownExperienceIdx
+                    ? selectedButtonClasses
+                    : unselectedButtonClasses,
+                  "transition-colors",
+                )}
                 onClick={() => setShownExperienceIdx(idx)}
               >
                 {`${experience.title} @${experience.company}`}

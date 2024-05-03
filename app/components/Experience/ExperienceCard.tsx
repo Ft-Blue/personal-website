@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { Badge } from "@/app/molecules/Badge";
+
 type ExperienceCardProps = {
   title: string;
   company: string;
@@ -32,12 +34,7 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
       <>{description}</>
       <div className="flex flex-wrap gap-2">
         {technologies.map((technology) => (
-          <span
-            key={technology}
-            className="rounded-md bg-secondary-700 px-2 py-1 text-primary-100"
-          >
-            {technology}
-          </span>
+          <Badge key={technology}>{technology}</Badge>
         ))}
       </div>
     </div>
