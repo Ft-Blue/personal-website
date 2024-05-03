@@ -11,7 +11,7 @@ export const LayoutGrid: FC<{ children: ReactNode; extraClasses?: string }> = ({
   return (
     <div
       className={twMerge(
-        "mx-8 grid grid-cols-1 grid-rows-layout gap-4 md:mx-32 md:grid-cols-8 lg:mx-40",
+        "mx-8 grid grid-cols-1 gap-4 md:mx-32 md:grid-cols-8 lg:mx-40",
         extraClasses ?? "",
       )}
     >
