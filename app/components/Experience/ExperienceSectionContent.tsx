@@ -30,7 +30,7 @@ export const ExperienceSectionContent: React.FC<{
               <button
                 key={`${experience.company} - ${experience.startDate}`}
                 className={twMerge(
-                  "p-2 text-start hover:border-b-2 hover:border-secondary-700 hover:text-secondary-700",
+                  "p-2 text-start hover:border-b-2 hover:border-secondary-700 hover:text-secondary-700 text-lg",
                   idx === shownExperienceIdx
                     ? selectedButtonClasses
                     : unselectedButtonClasses,

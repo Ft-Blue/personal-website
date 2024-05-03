@@ -24,12 +24,12 @@ export const ExperienceCard: React.FC<ExperienceCardProps> = ({
   return (
     <div className="flex flex-col gap-4 border-primary-500 py-2 pl-6 md:border-l-2">
       <div className="flex flex-col gap-2">
-        <h3 className="text-secondary-700">{title}</h3>
-        <h4 className="text-primary-100">{company}</h4>
-        <h4 className="text-primary-500">{location}</h4>
-        <h4 className="text-primary-500">
+        <h3 className="text-2xl text-secondary-700">{title}</h3>
+        <h4 className="text-xl text-primary-100">{company}</h4>
+        <h5 className="text-primary-500">{location}</h5>
+        <h5 className="text-primary-500">
           {startDate} - {endDate}
-        </h4>
+        </h5>
       </div>
       <>{description}</>
       <div className="flex flex-wrap gap-2">

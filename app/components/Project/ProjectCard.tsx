@@ -8,6 +8,8 @@ import { Project } from "./types";
 export const ProjectCard: React.FC<{ project: Project }> = ({
   project: { title, description, technologies, githubUrl, demoUrl, imageUrl },
 }) => {
+  console.log("imageUrl", imageUrl);
+
   return (
     <div className="flex w-full flex-col gap-4 px-4 py-2">
       <div className="relative h-80 w-full">
@@ -25,8 +27,8 @@ export const ProjectCard: React.FC<{ project: Project }> = ({
 
       <div className="flex flex-col gap-6">
         <div>
-          <h3 className="mb-2">{title}</h3>
-          <p>{description}</p>
+          <h3 className="mb-2 text-2xl">{title}</h3>
+          <p className="text-primary-500">{description}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech) => (
@@ -35,11 +37,16 @@ export const ProjectCard: React.FC<{ project: Project }> = ({
         </div>
         <div className="flex justify-end gap-4">
           {demoUrl !== undefined && (
-            <CTA href={demoUrl} target="_blank" isSecondary>
+            <CTA
+              additionalClasses="px-4 py-2"
+              href={demoUrl}
+              target="_blank"
+              isSecondary
+            >
               Demo
             </CTA>
           )}
-          <CTA href={githubUrl} target="_blank">
+          <CTA additionalClasses="px-4 py-2" href={githubUrl} target="_blank">
             Github
           </CTA>
         </div>

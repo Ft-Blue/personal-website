@@ -1,8 +1,6 @@
 import { ProjectsSectionContent } from "./ProjectsSectionContent";
 import { fetchProjects } from "./utils";
 
-export const revalidate = 86400;
-
 export const ProjectsSection: React.FC = async () => {
   const projects = await fetchProjects();
 

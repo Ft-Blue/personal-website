@@ -58,7 +58,7 @@ const SocialLinks: React.FC = () => {
 const ReachOut: React.FC = () => {
   return (
     <>
-      <div className="col-span-full mb-8 text-primary-300 md:text-center">
+      <div className="col-span-full mb-8 text-background-300 md:text-center">
         <p>
           I&apos;m not currently looking for new opportunities, but I&apos;m
           always open to new connections.
