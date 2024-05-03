@@ -19,14 +19,14 @@ export const getEntryById = <T extends EntrySkeletonType>(
 
 export const getEntriesByType = <T extends EntrySkeletonType>(
   contentType: T["contentTypeId"],
-): Promise<EntryCollection<T, undefined>> => {
+): Promise<EntryCollection<T, "WITHOUT_UNRESOLVABLE_LINKS">> => {
   const contenfulClient = createClient({
     space: process.env.CONTENTFUL_SPACE_ID ?? "",
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
     host: "cdn.contentful.com",
   });
 
-  return contenfulClient.getEntries<T>({
+  return contenfulClient.withoutUnresolvableLinks.getEntries<T>({
     content_type: contentType,
   });
 };

@@ -1,19 +1,20 @@
+import { getEntriesByType } from "@/app/services/contentful";
+import { TypeSide__projectSkeleton } from "@/app/types/contentful";
+
 import { Project } from "./types";
 
-export const fetchProjects = (): Project[] => [
-  {
-    title: "Project 1",
-    description: "Description 1",
-    technologies: ["Tech 1", "Tech 2"],
-    githubUrl: "https://github.com",
-    demoUrl: "https://demo.com",
-  },
-  {
-    title: "Project 2",
-    description: "Description 2",
-    technologies: ["Tech 3", "Tech 4"],
-    githubUrl: "https://github.com",
-    demoUrl: undefined,
-    imageUrl: "https://via.placeholder.com/300",
-  },
-];
+export const fetchProjects = async (): Promise<Project[]> => {
+  const projects =
+    await getEntriesByType<TypeSide__projectSkeleton>("side-project");
+
+  console.dir(projects.items, { depth: null });
+
+  return projects.items.map((project) => ({
+    title: project.fields.title,
+    description: project.fields.description,
+    technologies: project.fields.technologies,
+    githubUrl: project.fields.repositoryUrl,
+    demoUrl: project.fields.demoUrl,
+    imageUrl: `https:${project.fields.image?.fields.file?.url}`,
+  }));
+};
