@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
 import { LayoutGrid } from "@/app/layout/LayoutGrid";
+import { CTA } from "@/app/molecules/CTA";
 
 export const ContactSection: React.FC = () => {
   return (
@@ -68,12 +69,7 @@ const ReachOut: React.FC = () => {
         </p>
       </div>
       <div className="col-span-full mb-16 flex items-center justify-center text-primary-300">
-        <Link
-          href="mailto:moad.fethallah@gmail.com"
-          className="w-fit rounded-md border-2 border-secondary-700 px-8 py-4 text-secondary-700 transition-colors duration-300 ease-in-out hover:bg-secondary-700 hover:text-background-100"
-        >
-          Reach out !
-        </Link>
+        <CTA href="mailto:moad.fethallah@gmail.com">Reach out !</CTA>
       </div>
     </>
   );

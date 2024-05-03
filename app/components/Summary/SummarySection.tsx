@@ -1,6 +1,5 @@
-import Link from "next/link";
-
 import { LayoutGrid } from "@/app/layout/LayoutGrid";
+import { CTA } from "@/app/molecules/CTA";
 
 export const SummarySection: React.FC = () => {
   return (
@@ -18,12 +17,7 @@ export const SummarySection: React.FC = () => {
         </div>
 
         <div className="col-span-full">
-          <Link
-            className="w-fit rounded-md border-2 border-secondary-700 px-8 py-4 text-secondary-700 transition-colors duration-300 ease-in-out hover:bg-secondary-700 hover:text-background-100"
-            href="#experience"
-          >
-            Check out my work !
-          </Link>
+          <CTA href="#experience">Check out my work !</CTA>
         </div>
       </LayoutGrid>
     </section>
