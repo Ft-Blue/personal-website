@@ -6,7 +6,7 @@ export const LayoutGrid: FC<{ children: ReactNode; extraClasses?: string }> = ({
 }) => {
   return (
     <div
-      className={`mx-8 grid grid-cols-1 grid-rows-layout gap-4 md:mx-32 md:grid-cols-5 lg:mx-40 ${extraClasses ?? ""}`}
+      className={`mx-8 grid grid-cols-1 grid-rows-layout gap-4 md:mx-32 md:grid-cols-8 lg:mx-40 ${extraClasses ?? ""}`}
     >
       {children}
     </div>
