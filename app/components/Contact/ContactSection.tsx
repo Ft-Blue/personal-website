@@ -1,10 +1,7 @@
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Link from "next/link";
-
 import { LayoutGrid } from "@/app/layout/LayoutGrid";
 import { CTA } from "@/app/molecules/CTA";
+
+import { Email, Github, LinkedIn } from "./Socials";
 
 export const ContactSection: React.FC = () => {
   return (
@@ -28,29 +25,10 @@ export const ContactSection: React.FC = () => {
 
 const SocialLinks: React.FC = () => {
   return (
-    <div className="col-span-full flex items-center justify-center gap-8 text-primary-300">
-      <Link
-        href="mailto:moad.fethallah@gmail.com"
-        className="text-4xl text-primary-100"
-      >
-        <FontAwesomeIcon icon={faEnvelope} />
-      </Link>
-      <Link
-        href="https://github.com/Ft-Blue"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-4xl text-primary-100"
-      >
-        <FontAwesomeIcon icon={faGithub} />
-      </Link>
-      <Link
-        href="https://www.linkedin.com/in/moad-fethallah/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-4xl text-primary-100"
-      >
-        <FontAwesomeIcon icon={faLinkedin} />
-      </Link>
+    <div className="col-span-full flex items-center justify-center gap-8">
+      <Email />
+      <Github />
+      <LinkedIn />
     </div>
   );
 };

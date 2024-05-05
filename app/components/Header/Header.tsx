@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-background-900 px-8 text-center text-sm md:px-8">
+    <header className="fixed top-0 z-50 w-screen bg-background-900 px-8 text-center text-sm md:px-8">
       <div className="flex justify-between py-4">
         <div className="flex content-center">
           <Image
