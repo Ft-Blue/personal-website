@@ -8,17 +8,15 @@ import { Project } from "./types";
 export const ProjectCard: React.FC<{ project: Project }> = ({
   project: { title, description, technologies, githubUrl, demoUrl, imageUrl },
 }) => {
-  console.log("imageUrl", imageUrl);
-
   return (
-    <div className="flex w-full flex-col gap-4 px-4 py-2">
+    <div className="flex w-full flex-col gap-4 rounded-lg p-4 shadow shadow-background-700">
       <div className="relative h-80 w-full">
         <Image
           src={imageUrl ?? "/logo-light.png"}
           alt={title}
           fill
           style={{
-            objectFit: "cover",
+            objectFit: "contain",
             height: "100%",
             width: "100%",
           }}

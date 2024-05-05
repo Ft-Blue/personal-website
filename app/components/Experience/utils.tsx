@@ -56,7 +56,7 @@ const formatDescription = (description: Document): ReactNode => {
   const options: Options = {
     renderNode: {
       [BLOCKS.UL_LIST]: (node, children) => {
-        return <ul className="list-disc">{children}</ul>;
+        return <ul className="list-disc pl-4">{children}</ul>;
       },
       [BLOCKS.LIST_ITEM]: (node, children) => {
         return <li>{children}</li>;
