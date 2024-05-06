@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://moadfethallah.com/sitemap.xml
+Host: https://moadfethallah.com
