@@ -1,5 +1,5 @@
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faFileLines } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { FC } from "react";
@@ -37,6 +37,19 @@ export const Email: FC = () => {
       className="text-4xl text-primary-100"
     >
       <FontAwesomeIcon icon={faEnvelope} />
+    </Link>
+  );
+};
+
+export const Resume: FC = () => {
+  return (
+    <Link
+      href="/resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-4xl text-primary-100"
+    >
+      <FontAwesomeIcon icon={faFileLines} />
     </Link>
   );
 };

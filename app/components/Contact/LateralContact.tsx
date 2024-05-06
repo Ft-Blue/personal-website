@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Email, Github, LinkedIn } from "./Socials";
+import { Email, Github, LinkedIn, Resume } from "./Socials";
 
 export const LateralContact: FC = () => {
   return (
@@ -8,6 +8,7 @@ export const LateralContact: FC = () => {
       <Email />
       <LinkedIn />
       <Github />
+      <Resume />
     </div>
   );
 };
