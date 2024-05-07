@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   title: "Moad Fethallah",
   description:
     "Moad Fethallah is a software engineer passionate about designing and building digital solutions for business problems.",
+  alternates: {
+    canonical: "https://moadfethallah.com",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 type RootLayoutProps = Readonly<{
